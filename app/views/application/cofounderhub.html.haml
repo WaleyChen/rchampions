@@ -1,0 +1,105 @@
+.container
+  %h1= 'Criteria'
+
+  #roles
+    %h2= 'Roles'
+
+    .toggle-set
+      .set
+        %h3= 'Business'
+
+      .set
+        %h3= 'Technical'
+
+      .set
+        %h3= 'Other'
+
+    .toggle-set
+      .set
+        = check_box_tag(:business, 'true', :checked => 'true')
+
+      .set
+        = check_box_tag(:engineer, 'true', :checked => 'true')
+
+      .set
+        = check_box_tag(:engineer, 'true', :checked => 'true')
+
+    .toggle-set
+      .set
+        %h4= 'Business Developer'
+        = check_box_tag(:business)
+
+      .set
+        %h4=  'Application Developer'
+        = check_box_tag(:engineer)
+
+      .set
+        %h4=  'Generalist'
+        = check_box_tag(:engineer, 'true', :checked => 'true')
+
+    .toggle-set
+      .set
+        %h4= 'Marketer'
+        = check_box_tag(:business)
+
+      .set
+        %h4=  'Engineer'
+        = check_box_tag(:engineer)
+
+      .set
+        %h4=  'Growth Hacker'
+        = check_box_tag(:engineer)
+
+    .toggle-set
+      .set
+        %h4= 'Product Manager'
+        = check_box_tag(:business)
+
+      .set
+        %h4=  'Hardware Engineer'
+        = check_box_tag(:engineer)
+    .toggle-set
+      .set
+        %h4= 'Sales'
+        = check_box_tag(:business)
+
+      .set
+        %h4=  'Mobile Developer'
+        = check_box_tag(:engineer)
+
+    .toggle-set
+      .set
+
+      .set
+        %h4=  'Scientist'
+        = check_box_tag(:engineer)
+
+    .toggle-set
+      .set
+
+      .set
+        %h4=  'UI/UX Designer'
+        = check_box_tag(:engineer)
+
+    .toggle-set
+      .set
+
+      .set
+        %h4=  'Web Developer'
+        = check_box_tag(:engineer)
+
+    .toggle-set
+      .set
+
+      .set
+  #specifics
+    %h2= 'Specifics'
+  #results
+    %h1= 'Results'
+
+:coffeescript
+  $(document).ready ->
+    $('input').iphoneStyle({
+      checkedLabel: 'YES',
+      uncheckedLabel: 'NO'
+    });

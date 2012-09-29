@@ -1,0 +1,28 @@
+.container {
+  width: 940px;
+}
+
+#roles {
+  display: inline-block;
+  width: 520px;
+
+  .toggle-set {
+    .set {
+      display: inline-block;
+      width: 170px;
+
+      .iPhoneCheckContainer {
+        width: 150px !important;
+      }
+      .iPhoneCheckHandle {
+        width: 70px !important;
+      }
+    }
+  }
+}
+
+#specifics {
+  display: inline-block;
+  float: right;
+  width: 415px;
+}
