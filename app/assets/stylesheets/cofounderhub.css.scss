@@ -1,28 +1,76 @@
 .container {
   width: 940px;
-}
 
-#roles {
-  display: inline-block;
-  width: 520px;
+  #criteria {
+    #dropdowns {
+      width: 84%;
 
-  .toggle-set {
-    .set {
-      display: inline-block;
-      width: 170px;
-
-      .iPhoneCheckContainer {
-        width: 150px !important;
+      #term {
+        display: inline-block;
+        width: 103px;
       }
-      .iPhoneCheckHandle {
-        width: 70px !important;
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    #level {
+
+      .set {
+
+        h4 {
+          display: inline-block;
+        }
+
+      }
+    }
+
+    h3,
+    select {
+      margin-left: 8px;
+    }
+
+    label {
+      display: inline-block;
+    }
+
+    table {
+      width: 100%;
+
+      td {
+        vertical-align: top;
+      }
+    }
+
+    .toggle-set {
+      .set {
+        display: inline-block;
+        width: 170px;
+
+        .iPhoneCheckContainer {
+          width: 170px !important;
+        }
+        .iPhoneCheckHandle {
+          width: 70px !important;
+        }
       }
     }
   }
-}
 
-#specifics {
-  display: inline-block;
-  float: right;
-  width: 415px;
+  #results {
+    h3 {
+      margin-left: 8px;
+    }
+
+    table {
+      .desc {
+        width: 70%;
+      }
+
+      td {
+        vertical-align: middle;
+      }
+    }
+  }
 }

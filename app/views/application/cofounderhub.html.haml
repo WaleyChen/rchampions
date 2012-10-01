@@ -1,105 +1,53 @@
 .container
-  %h1= 'Criteria'
+  %h3
+    %ul.nav.nav-tabs
+      %li.active= link_to 'Jobs', '/jobs', { :remote => true }
+      %li= link_to 'Students', '/students', { :remote => true } 
 
-  #roles
-    %h2= 'Roles'
+  #criteria
+    %h3= 'Criteria'
 
-    .toggle-set
-      .set
-        %h3= 'Business'
+    %table
+      %tbody
+        %td#dropdowns
+          - country_options = options_for_select([ ['Canada'], ['USA'] ])
+          - degree_options = options_for_select([ ['Arts'], ['Computer Science'] ])
+          - term_options = options_for_select([ ['Winter 2013'], ['Spring 2013'], ['Fall 2013'] ])
+          #term= select_tag :term, term_options
+          #degree= select_tag :degree, degree_options, :prompt => 'Any Degree'
+          #country= select_tag :country_options, country_options, :prompt => 'Any Country'
+        %td#level
+          .set
+            = check_box :level, 'junior', :checked => 'checked' 
+            %h4= 'Junior'
+          .set
+            = check_box :level, 'junior', :checked => 'checked' 
+            %h4= 'Intermediate'
+          .set
+            = check_box :level, 'intermediate', :checked => 'checked'
+            %h4= 'Senior'
 
-      .set
-        %h3= 'Technical'
-
-      .set
-        %h3= 'Other'
-
-    .toggle-set
-      .set
-        = check_box_tag(:business, 'true', :checked => 'true')
-
-      .set
-        = check_box_tag(:engineer, 'true', :checked => 'true')
-
-      .set
-        = check_box_tag(:engineer, 'true', :checked => 'true')
-
-    .toggle-set
-      .set
-        %h4= 'Business Developer'
-        = check_box_tag(:business)
-
-      .set
-        %h4=  'Application Developer'
-        = check_box_tag(:engineer)
-
-      .set
-        %h4=  'Generalist'
-        = check_box_tag(:engineer, 'true', :checked => 'true')
-
-    .toggle-set
-      .set
-        %h4= 'Marketer'
-        = check_box_tag(:business)
-
-      .set
-        %h4=  'Engineer'
-        = check_box_tag(:engineer)
-
-      .set
-        %h4=  'Growth Hacker'
-        = check_box_tag(:engineer)
-
-    .toggle-set
-      .set
-        %h4= 'Product Manager'
-        = check_box_tag(:business)
-
-      .set
-        %h4=  'Hardware Engineer'
-        = check_box_tag(:engineer)
-    .toggle-set
-      .set
-        %h4= 'Sales'
-        = check_box_tag(:business)
-
-      .set
-        %h4=  'Mobile Developer'
-        = check_box_tag(:engineer)
-
-    .toggle-set
-      .set
-
-      .set
-        %h4=  'Scientist'
-        = check_box_tag(:engineer)
-
-    .toggle-set
-      .set
-
-      .set
-        %h4=  'UI/UX Designer'
-        = check_box_tag(:engineer)
-
-    .toggle-set
-      .set
-
-      .set
-        %h4=  'Web Developer'
-        = check_box_tag(:engineer)
-
-    .toggle-set
-      .set
-
-      .set
-  #specifics
-    %h2= 'Specifics'
   #results
-    %h1= 'Results'
+    %h3= 'Results'
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.desc= link_to 'Description', ''
+          %th= link_to 'Location', ''
+          %th= link_to 'Deadline', ''
+      %tbody
+      - (1..10).each do
+        %tr
+          %td.desc
+            %h4= link_to 'Ruby on Rails Software Engineer', ''
+            %h5= raw "#{ link_to 'Redwood Strategic Inc.', '' } - Toronto, ON"
+            %p= 'Redwood Strategic is the home of CampusPerks, a software platform that enables not-­for-­profit organizations and branded companies to run record-­breaking online challenges and crowd-­sourcing programs. We help connect businesses and not-­for-­profit organizations with end user communities.'
+            %span.badge.badge-info= 'Javascript'
+            %span.badge.badge-info= 'MongoDB'
+            %span.badge.badge-info= 'Rails'
+          %td= 'Canada, Toronto, ON'
+          %td= 'Nov 19, 2012'
 
 :coffeescript
   $(document).ready ->
-    $('input').iphoneStyle({
-      checkedLabel: 'YES',
-      uncheckedLabel: 'NO'
-    });
