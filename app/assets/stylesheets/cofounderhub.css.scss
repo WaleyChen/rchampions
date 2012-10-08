@@ -1,6 +1,10 @@
 .container {
   width: 940px;
 
+  li #features {
+    float: right !important;
+  }
+
   #criteria {
     #dropdowns {
       width: 84%;

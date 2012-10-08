@@ -1,53 +1,51 @@
 .container
   %h3
     %ul.nav.nav-tabs
-      %li.active= link_to 'Jobs', '/jobs', { :remote => true }
-      %li= link_to 'Students', '/students', { :remote => true } 
+      %li#jobs= link_to 'Jobs', jobs_path, { :method => :get, :remote => true }
+      %li= link_to 'Students', '/students', { :remote => true }
+      %li#features= link_to 'Features', '#students'
+    %li#create_listing= link_to 'Create a Listing', jobs_path, { :method => :post, :remote => true, :rel => "address:/jobs" }
+  %br
 
-  #criteria
-    %h3= 'Criteria'
+  = render :partial => 'jobs/index'
 
-    %table
-      %tbody
-        %td#dropdowns
-          - country_options = options_for_select([ ['Canada'], ['USA'] ])
-          - degree_options = options_for_select([ ['Arts'], ['Computer Science'] ])
-          - term_options = options_for_select([ ['Winter 2013'], ['Spring 2013'], ['Fall 2013'] ])
-          #term= select_tag :term, term_options
-          #degree= select_tag :degree, degree_options, :prompt => 'Any Degree'
-          #country= select_tag :country_options, country_options, :prompt => 'Any Country'
-        %td#level
-          .set
-            = check_box :level, 'junior', :checked => 'checked' 
-            %h4= 'Junior'
-          .set
-            = check_box :level, 'junior', :checked => 'checked' 
-            %h4= 'Intermediate'
-          .set
-            = check_box :level, 'intermediate', :checked => 'checked'
-            %h4= 'Senior'
+- content_for :javascripts do
+  :javascript
+    $(function() {
+      var History = window.History;
 
-  #results
-    %h3= 'Results'
+      History.Adapter.bind(window,'statechange',function(){
+          var State = History.getState();
+          History.log(State.data, State.title, State.url);
+      });
 
-    %table.table.table-hover
-      %thead
-        %tr
-          %th.desc= link_to 'Description', ''
-          %th= link_to 'Location', ''
-          %th= link_to 'Deadline', ''
-      %tbody
-      - (1..10).each do
-        %tr
-          %td.desc
-            %h4= link_to 'Ruby on Rails Software Engineer', ''
-            %h5= raw "#{ link_to 'Redwood Strategic Inc.', '' } - Toronto, ON"
-            %p= 'Redwood Strategic is the home of CampusPerks, a software platform that enables not-­for-­profit organizations and branded companies to run record-­breaking online challenges and crowd-­sourcing programs. We help connect businesses and not-­for-­profit organizations with end user communities.'
-            %span.badge.badge-info= 'Javascript'
-            %span.badge.badge-info= 'MongoDB'
-            %span.badge.badge-info= 'Rails'
-          %td= 'Canada, Toronto, ON'
-          %td= 'Nov 19, 2012'
+      History.pushState({state:1}, "State 1", "?state=1");
+    });
 
-:coffeescript
-  $(document).ready ->
+    (function(window,undefined){
+
+      // Prepare
+      var History = window.History; // Note: We are using a capital H instead of a lower h
+      if ( !History.enabled ) {
+           // History.js is disabled for this browser.
+           // This is because we can optionally choose to support HTML4 browsers or not.
+          return false;
+      }
+
+      // Bind to StateChange Event
+      History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+          var State = History.getState(); // Note: We are using History.getState() instead of event.state
+          History.log(State.data, State.title, State.url);
+      });
+
+      // Change our States
+      History.pushState({state:1}, "State 1", "?state=1"); // logs {state:1}, "State 1", "?state=1"
+      History.pushState({state:2}, "State 2", "?state=2"); // logs {state:2}, "State 2", "?state=2"
+      History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
+      History.pushState(null, null, "?state=4"); // logs {}, '', "?state=4"
+      History.back(); // logs {state:3}, "State 3", "?state=3"
+      History.back(); // logs {state:1}, "State 1", "?state=1"
+      History.back(); // logs {}, "Home Page", "?"
+      History.go(2); // logs {state:3}, "State 3", "?state=3"
+
+    })(window);
