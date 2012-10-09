@@ -6,14 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Specify JOBS=nn when invoking to request creation of more user accounts. 
-# Example:
-#   bundle exec rake db:reseed JOBS=20
-
-require 'faker'
-
-job = Job.create({
- country: 'Canada'
+company =  Company.create({
+  description: '',
+  name: 'Redwood Strategic Inc.',
+  link: 'http://campusperks.ca/'
 })
-job.save
 
+company.save
+
+10.times do 
+  job = Job.create({
+    country: 'Canada',
+    city: 'Toronto',
+    deadline: Time.parse('2015-05-28 12:00:00 EDT'),
+    province: 'Ontario',
+    title: 'Senior Ruby on Rails Software Developer'
+  })
+
+  job.company = company
+  job.save
+end

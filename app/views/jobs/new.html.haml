@@ -1,0 +1,8 @@
+= form_for @job, :url => jobs_path, :method => :post do |form|
+  = form.text_field :title, :placeholder => 'Title'
+  = form.text_field :country, :placeholder => 'Country'
+  = form.text_field :province, :placeholder => 'Province/State'
+  = form.text_field :city, :placeholder => 'City'
+  = form.text_field :deadline, :placeholder => 'Deadline'
+
+  = form.submit 'Create Posting'

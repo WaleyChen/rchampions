@@ -1,51 +1,44 @@
-.container
-  %h3
-    %ul.nav.nav-tabs
-      %li#jobs= link_to 'Jobs', jobs_path, { :method => :get, :remote => true }
-      %li= link_to 'Students', '/students', { :remote => true }
-      %li#features= link_to 'Features', '#students'
-    %li#create_listing= link_to 'Create a Listing', jobs_path, { :method => :post, :remote => true, :rel => "address:/jobs" }
-  %br
+#criteria
+  %h3= 'Criteria'
 
-  = render :partial => 'jobs/index'
+  %table
+    %tbody
+      %td#dropdowns
+        - country_options = options_for_select([ ['Canada'], ['USA'] ])
+        - degree_options = options_for_select([ ['Arts'], ['Computer Science'] ])
+        - term_options = options_for_select([ ['Winter 2013'], ['Spring 2013'], ['Fall 2013'] ])
+        #term= select_tag :term, term_options
+        #degree= select_tag :degree, degree_options, :prompt => 'Any Degree'
+        #country= select_tag :country_options, country_options, :prompt => 'Any Country'
+      %td#level
+        .set
+          = check_box :level, 'junior', :checked => 'checked' 
+          %h4= 'Junior'
+        .set
+          = check_box :level, 'junior', :checked => 'checked' 
+          %h4= 'Intermediate'
+        .set
+          = check_box :level, 'intermediate', :checked => 'checked'
+          %h4= 'Senior'
 
-- content_for :javascripts do
-  :javascript
-    $(function() {
-      var History = window.History;
+#results
+  %h3= 'Results'
 
-      History.Adapter.bind(window,'statechange',function(){
-          var State = History.getState();
-          History.log(State.data, State.title, State.url);
-      });
-
-      History.pushState({state:1}, "State 1", "?state=1");
-    });
-
-    (function(window,undefined){
-
-      // Prepare
-      var History = window.History; // Note: We are using a capital H instead of a lower h
-      if ( !History.enabled ) {
-           // History.js is disabled for this browser.
-           // This is because we can optionally choose to support HTML4 browsers or not.
-          return false;
-      }
-
-      // Bind to StateChange Event
-      History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-          var State = History.getState(); // Note: We are using History.getState() instead of event.state
-          History.log(State.data, State.title, State.url);
-      });
-
-      // Change our States
-      History.pushState({state:1}, "State 1", "?state=1"); // logs {state:1}, "State 1", "?state=1"
-      History.pushState({state:2}, "State 2", "?state=2"); // logs {state:2}, "State 2", "?state=2"
-      History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
-      History.pushState(null, null, "?state=4"); // logs {}, '', "?state=4"
-      History.back(); // logs {state:3}, "State 3", "?state=3"
-      History.back(); // logs {state:1}, "State 1", "?state=1"
-      History.back(); // logs {}, "Home Page", "?"
-      History.go(2); // logs {state:3}, "State 3", "?state=3"
-
-    })(window);
+  %table.table.table-hover
+    %thead
+      %tr
+        %th.desc= link_to 'Title', ''
+        %th= link_to 'Company', ''
+        %th= link_to 'Location', ''
+        %th= link_to 'Deadline', ''
+    %tbody
+    - @jobs.each do |job|
+      %tr
+        %td.desc
+          %h4= link_to job.title, ''
+          - # %span.badge.badge-info= 'Javascript'
+          - # %span.badge.badge-info= 'MongoDB'
+          - # %span.badge.badge-info= 'Rails'
+        %td= link_to job.company.name
+        %td= "#{ job.country }, #{ job.city }, #{ job.province }"
+        %td= job.deadline.strftime("%b %-d, %Y")

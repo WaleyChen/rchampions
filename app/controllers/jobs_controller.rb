@@ -1,11 +1,9 @@
 class JobsController < ApplicationController
 
   def create
-    @job = Job.new
-    
-    respond_to do |format|
-      format.js{ render :none => true }
-    end
+    @job = Job.new(params[:job])
+    @job.save
+    redirect_to :controller => 'application', :action => 'cofounderhub'
   end
 
   def index
@@ -17,4 +15,5 @@ class JobsController < ApplicationController
   def new
     @job = Job.new
   end
+
 end
