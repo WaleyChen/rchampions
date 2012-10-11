@@ -68,8 +68,8 @@ test:
         consistency: :strong
 production:
   sessions:
-  default:
-    uri: <%= ENV['MONGOHQ_URL'] %>
-    options:
-      skip_version_check: true
-      safe: true
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true
