@@ -88,8 +88,20 @@
     }
 
     table {
-      .desc {
-        width: 70%;
+      #title {
+        width: 50%;
+      }
+
+      #company {
+        width: 16%;
+      }
+
+      #location {
+        width: 18%;
+      }
+
+      #deadline {
+        width: 16%;
       }
 
       td {
