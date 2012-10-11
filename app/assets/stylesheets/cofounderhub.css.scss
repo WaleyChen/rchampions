@@ -3,6 +3,17 @@
   position: fixed;
   left: 50%;
 
+  #iframe-wrapper {
+    padding-left: 12px;
+    height: 100%;
+    width: 100%;
+
+    iframe {
+      height: 100%;
+      width: 100% !important; 
+    }
+  }
+
   p {
     padding-left: 12px;
   }

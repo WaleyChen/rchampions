@@ -33,15 +33,15 @@
       %tbody
       - @jobs.each do |job|
         %tr
-          %td.desc
-            %h4= link_to job.title, ''
-            - # %span.badge.badge-info= 'Javascript'
-            - # %span.badge.badge-info= 'MongoDB'
-            - # %span.badge.badge-info= 'Rails'
+          %td.desc= link_to job.title, ''
+          - # %span.badge.badge-info= 'Javascript'
+          - # %span.badge.badge-info= 'MongoDB'
+          - # %span.badge.badge-info= 'Rails'
           %td= link_to job.company.name
           %td= "#{ job.city }, #{ job.province }, #{ job.country }"
           - deadline = job.deadline
           %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
 
 - content_for :right_panel do
-  = ''
+  #iframe-wrapper
+    %iframe{ :src => 'http://ch.tbe.taleo.net/CH03/ats/careers/requisition.jsp?org=ALTERA&cws=1&rid=2997' }
