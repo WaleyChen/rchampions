@@ -1,44 +1,56 @@
-#criteria
-  %h3= 'Criteria'
+- content_for :left_panel do
+  #criteria
+    %h3= 'Criteria'
 
-  %table
-    %tbody
-      %td#dropdowns
-        - country_options = options_for_select([ ['Canada'], ['USA'] ])
-        - degree_options = options_for_select([ ['Arts'], ['Computer Science'] ])
-        - term_options = options_for_select([ ['Winter 2013'], ['Spring 2013'], ['Fall 2013'] ])
-        #term= select_tag :term, term_options
-        #degree= select_tag :degree, degree_options, :prompt => 'Any Degree'
-        #country= select_tag :country_options, country_options, :prompt => 'Any Country'
-      %td#level
-        .set
-          = check_box :level, 'junior', :checked => 'checked' 
-          %h4= 'Junior'
-        .set
-          = check_box :level, 'junior', :checked => 'checked' 
-          %h4= 'Intermediate'
-        .set
-          = check_box :level, 'intermediate', :checked => 'checked'
-          %h4= 'Senior'
+    %table
+      %tbody
+        %tr
+          %td#dropdowns
+            - country_options = options_for_select([ ['Canada'], ['USA'] ])
+            - degree_options = options_for_select([ ['Arts'], ['Computer Science'] ])
+            - term_options = options_for_select([ ['Winter 2013'], ['Spring 2013'], ['Fall 2013'] ])
+            #term= select_tag :term, term_options
+            #degree= # select_tag :degree, degree_options, :prompt => 'Any Degree'
+            #country= select_tag :country_options, country_options, :prompt => 'Any Country'
+        %tr
+          %td#level
+            .set
+              = check_box :level, 'junior', :checked => 'checked' 
+              %h4= 'Junior'
+            .set
+              = check_box :level, 'junior', :checked => 'checked' 
+              %h4= 'Intermediate'
+            .set
+              = check_box :level, 'intermediate', :checked => 'checked'
+              %h4= 'Senior'
 
-#results
-  %h3= 'Results'
+  #results
+    %h3= 'Results'
 
-  %table.table.table-hover
-    %thead
-      %tr
-        %th.desc= link_to 'Title', ''
-        %th= link_to 'Company', ''
-        %th= link_to 'Location', ''
-        %th= link_to 'Deadline', ''
-    %tbody
-    - @jobs.each do |job|
-      %tr
-        %td.desc
-          %h4= link_to job.title, ''
-          - # %span.badge.badge-info= 'Javascript'
-          - # %span.badge.badge-info= 'MongoDB'
-          - # %span.badge.badge-info= 'Rails'
-        %td= link_to job.company.name
-        %td= "#{ job.country }, #{ job.city }, #{ job.province }"
-        %td= job.deadline.strftime("%b %-d, %Y")
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.desc= link_to 'Title', ''
+          %th= link_to 'Company', ''
+          %th= link_to 'Location', ''
+          %th= link_to 'Deadline', ''
+      %tbody
+      - @jobs.each do |job|
+        %tr
+          %td.desc
+            %h4= link_to job.title, ''
+            - # %span.badge.badge-info= 'Javascript'
+            - # %span.badge.badge-info= 'MongoDB'
+            - # %span.badge.badge-info= 'Rails'
+          %td= link_to job.company.name
+          %td= "#{ job.country }, #{ job.city }, #{ job.province }"
+          %td= job.deadline.strftime("%b %-d, %Y")
+
+- content_for :right_panel do
+  %p= "Redwood Strategic is the home of CampusPerks, a software platform that enables not-­for-­profit organizations and branded companies to run record-­breaking online challenges and crowd-­sourcing programs. We help connect businesses and not-­for-­profit organizations with end user communities."
+  %p= "In just 2 years we’ve enabled sponsorship of more than $500,000 in youth activities while setting global best practices for award-­winning commpanies... brands like Virgin Mobile, Alliance Films, Pepsi, Microsoft, and Research in Motion."
+  %p= "This fall we're taking a huge leap forward by opening up our platform to not-­for-­profit organizations across Canada and the U.S. We’re hiring a senior software developer to play a leadership role in building the next version of CampusPerks and our upcoming global product, CommunityPerks.com."
+  %p= "We’re seeking an exceptional engineer who loves making beautiful software products, thrives on solving tough problems and yearns to be part of a small and nimble 15-­person startup. You'll be doing green-­ fields software development and scaling CampusPerks for hundreds of client organizations and tens of thousands of community members to use. CampusPerks is just the beginning for us; we need someone to help build CommunityPerks and prepare for our North American launch."
+  %h3
+    %ul.nav.nav-tabs
+      %li= link_to 'AceInterns', root_path

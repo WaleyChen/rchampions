@@ -1,4 +1,15 @@
+#right-panel {
+
+  position: fixed;
+  left: 50%;
+
+  p {
+    padding-left: 12px;
+  }
+}
+
 .container {
+  display: inline-block;
   width: 50%;
 
   li #features {
@@ -7,11 +18,17 @@
 
   #criteria {
     #dropdowns {
-      width: 84%;
+
+      #country {
+        select { 
+          width: 103px;
+        }
+      }
 
       #term {
-        display: inline-block;
-        width: 103px;
+        select { 
+          width: 103px;
+        }
       }
 
       div {
@@ -22,6 +39,9 @@
     #level {
 
       .set {
+
+        display: inline-block;
+        margin-left: 8px;
 
         h4 {
           display: inline-block;

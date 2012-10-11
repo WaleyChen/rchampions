@@ -6,6 +6,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container.pull-left
-      = render :partial => 'layouts/nav'
-      = yield
+    #left-panel.container.pull-left
+      = render :partial => 'layouts/left_nav'
+      = yield :left_panel
+    #right-panel.container.pull-right.fixed
+      = render :partial => 'layouts/right_nav'
+      = yield :right_panel

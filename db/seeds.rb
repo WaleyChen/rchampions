@@ -8,17 +8,23 @@
 
 company =  Company.create({
   description: '',
+  name: 'Shopify',
+  link: 'http://campusperks.ca/'
+})
+company.save
+
+company =  Company.create({
+  description: '',
   name: 'Redwood Strategic Inc.',
   link: 'http://campusperks.ca/'
 })
-
 company.save
 
 10.times do 
   job = Job.create({
     country: 'Canada',
     city: 'Toronto',
-    deadline: Time.parse('2015-05-28 12:00:00 EDT'),
+    deadline: 'Rolling Basis',
     province: 'Ontario',
     title: 'Senior Ruby on Rails Software Developer'
   })
