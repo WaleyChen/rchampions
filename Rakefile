@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Cofounderhub::Application.load_tasks
+AceInterns::Application.load_tasks
