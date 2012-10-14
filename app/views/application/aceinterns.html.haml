@@ -32,7 +32,7 @@
           %th#deadline= link_to 'Deadline', ''
       %tbody
       - @jobs.each do |job|
-        %tr
+        %tr{ :href => job.apply_link }
           %td.desc= link_to job.title, ''
           - # %span.badge.badge-info= 'Javascript'
           - # %span.badge.badge-info= 'MongoDB'
@@ -44,4 +44,17 @@
 
 - content_for :right_panel do
   #iframe-wrapper
-    %iframe{ :src => 'http://ch.tbe.taleo.net/CH03/ats/careers/requisition.jsp?org=ALTERA&cws=1&rid=2997' }
+    %iframe{ :sandbox => 'allow-top-navigation', :seamless => 'seamless' }
+
+- content_for :javascript do
+  :javascript
+    $(document).ready(function() {
+
+      $("#results").on('click', 'tr', function(event) {
+        $('iframe').attr('src', $(this).attr('href'));
+      });
+
+      $('iframe').load(function() {
+      });
+
+    });

@@ -5,13 +5,6 @@
 
   #iframe-wrapper {
     padding-left: 12px;
-    height: 100%;
-    width: 100%;
-
-    iframe {
-      height: 100%;
-      width: 100% !important; 
-    }
   }
 
   p {
@@ -19,7 +12,7 @@
   }
 }
 
-.container {
+#left-panel {
   display: inline-block;
   width: 50%;
 
@@ -115,8 +108,12 @@
         width: 16%;
       }
 
-      td {
-        vertical-align: middle;
+      tr {
+        cursor: pointer;
+
+        td {
+          vertical-align: middle;
+        }
       }
     }
   }

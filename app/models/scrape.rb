@@ -3,6 +3,7 @@
 # NOKOGIRI
 # http://nokogiri.org/tutorials/searching_a_xml_html_document.html
 # http://cheat.errtheblog.com/s/nokogiri/
+require 'debugger'
 require 'net/http'
 require 'nokogiri'
 require 'open-uri'
@@ -21,12 +22,14 @@ class Scrape
     company = Company.new
     job = Job.new
     puts first
+    puts first['jobtitle']
 
     job.title =  first['jobtitle']
     company.name = first['company']
     job.city =  first['city']
     job.province = first['state']
     job.country = first['country']
+    job.deadline = 'Rolling Basis'
 
     # {"jobtitle"=>"Custom Software Developer Intern", "company"=>"MTS Systems Corporation", "city"=>"Eden Prairie", "state"=>"MN", "country"=>"US", 
     #   "formattedLocation"=>"Eden Prairie, MN", "source"=>"MTS Systems Corporation", "date"=>"Thu, 11 Oct 2012 16:59:54 GMT", 
@@ -67,7 +70,11 @@ class Scrape
     end
 
     puts job.inspect
-    puts company
+    puts company.inspect
+
+    job.company = company
+    company.save
+    job.save
   end
 
 end
