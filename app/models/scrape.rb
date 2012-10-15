@@ -3,7 +3,6 @@
 # NOKOGIRI
 # http://nokogiri.org/tutorials/searching_a_xml_html_document.html
 # http://cheat.errtheblog.com/s/nokogiri/
-require 'debugger'
 require 'net/http'
 require 'nokogiri'
 require 'open-uri'
