@@ -18,7 +18,7 @@ class Scrape
     total_results = data['totalResults']
     puts total_results
 
-    start = 300
+    start = 0
 
     while start + 25 <= total_results do
       url = "http://api.indeed.com/ads/apisearch?publisher=4563146977077687&format=json&q=software+developer+intern&jt=internship&start=#{ start }&limit=25&v=2"
