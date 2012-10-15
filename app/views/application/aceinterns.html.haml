@@ -33,7 +33,7 @@
       %tbody
       - @jobs.each do |job|
         %tr{ :href => job.apply_link }
-          %td.desc= link_to job.title, ''
+          %td.desc= link_to job.title, job.apply_link
           - # %span.badge.badge-info= 'Javascript'
           - # %span.badge.badge-info= 'MongoDB'
           - # %span.badge.badge-info= 'Rails'
@@ -42,9 +42,12 @@
           - deadline = job.deadline
           %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
 
+- content_for :right_nav do
+  = render :partial => 'layouts/right_nav'
+
 - content_for :right_panel do
   #iframe-wrapper
-    %iframe{ :sandbox => 'allow-top-navigation', :seamless => 'seamless' }
+    %iframe{ :sandbox => 'allow-scripts', :seamless => 'seamless' }
 
 - content_for :javascript do
   :javascript
@@ -52,9 +55,12 @@
 
       $("#results").on('click', 'tr', function(event) {
         $('iframe').attr('src', $(this).attr('href'));
+        console.log($(this));
+        $('#right-nav li').val();
       });
 
       $('iframe').load(function() {
+        $("iframe").scrollLeft(300);
       });
 
     });

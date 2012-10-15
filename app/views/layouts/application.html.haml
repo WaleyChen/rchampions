@@ -10,6 +10,6 @@
       = render :partial => 'layouts/left_nav'
       = yield :left_panel
     #right-panel.container.pull-right.fixed
-      = render :partial => 'layouts/right_nav'
+      = yield :right_nav
       = yield :right_panel
   = yield :javascript
