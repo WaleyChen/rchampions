@@ -1,0 +1,2 @@
+precompile assets for production
+  - RAILS_ENV=production bundle exec rake assets:precompile
