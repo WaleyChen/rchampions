@@ -1,0 +1,23 @@
+#newsletter
+  #title= 'AceInterns'
+  #heading= 'Get a Biweekly Newsletter of Awesome Internships'
+
+  %table.table.table-hover
+    %thead
+      %tr
+        %th#hacker
+          = 'Hacker'
+        %th#hustler= 'Hustler'
+        %th#designer= 'Designer'
+    %tbody
+      - (0..@row_count - 1).each do |i|
+        - hacker = @hackers[i]
+        - hustler = @hustlers[i]
+        - designer = @designers[i]
+        %tr
+          %td
+            = link_to "#{ hacker.company_name } - #{ hacker.title } (#{ hacker.city }, #{ hacker.state })", hacker.apply_link if hacker.present?
+          %td
+            = link_to "#{ hustler.company_name } - #{ hustler.title } (#{ hustler.city }, #{ hustler.state })", hustler.apply_link if hustler.present?
+          %td
+            = link_to "#{ designer.company_name } - #{ designer.title } (#{ designer.city }, #{ designer.state })", designer.apply_link if designer.present?

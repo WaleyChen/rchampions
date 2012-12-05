@@ -3,7 +3,7 @@ class Company
 
   field :description
   field :link
-  field :name
+  field :name, :default => ''
 
   has_many :jobs
 end

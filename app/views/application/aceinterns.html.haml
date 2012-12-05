@@ -10,17 +10,6 @@
             #term= select_tag :term, term_options
             #degree= # select_tag :degree, degree_options, :prompt => 'Any Degree'
             #country= select_tag :country_options, country_options, :prompt => 'Any Country'
-        %tr
-          %td#level
-            .set
-              = check_box :level, 'junior', :checked => 'checked' 
-              %h4= 'Junior'
-            .set
-              = check_box :level, 'junior', :checked => 'checked' 
-              %h4= 'Intermediate'
-            .set
-              = check_box :level, 'intermediate', :checked => 'checked'
-              %h4= 'Senior'
 
   #results
     %table.table.table-hover
@@ -29,7 +18,7 @@
           %th#title= link_to 'Title', ''
           %th#company= link_to 'Company', ''
           %th#location= link_to 'Location', ''
-          %th#deadline= link_to 'Deadline', ''
+          - # %th#deadline= link_to 'Deadline', ''
       %tbody
       - @jobs.each do |job|
         %tr{ :href => job.apply_link }
@@ -40,7 +29,7 @@
           %td= link_to job.company.name
           %td= "#{ job.city }, #{ job.province }, #{ job.country }"
           - deadline = job.deadline
-          %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
+          - # %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
 
 - content_for :right_nav do
   = render :partial => 'layouts/right_nav'
