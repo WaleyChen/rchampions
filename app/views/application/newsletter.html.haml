@@ -5,10 +5,9 @@
   %table.table.table-hover
     %thead
       %tr
-        %th#hacker
-          = 'Hacker'
-        %th#hustler= 'Hustler'
-        %th#designer= 'Designer'
+        %th#hacker Hacker
+        %th#hustler Hustler
+        %th#designer Designer
     %tbody
       - (0..@row_count - 1).each do |i|
         - hacker = @hackers[i]
