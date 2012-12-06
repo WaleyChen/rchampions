@@ -34,4 +34,39 @@
 
 FiveHundredPixels.seed
 Facebook.seed
+MediaCompany.seed
+Shopify.seed
+SportsHedge.seed
 Uniiverse.seed
+WaveAccounting.seed
+
+jobs = { 
+  "Hacker" => Hackers::HACKERS,
+  "Hustler" => Hustlers::HUSTLERS,
+  "Designer" => Designers::DESIGNERS
+}
+
+jobs.each do |k, v|
+
+  v.each do |job|
+    company_name = job[:company]
+
+    if company_name.present?
+      Company.where(:name => company_name).all.destroy
+      Job.where(:company_name => company_name).all.destroy
+
+      company =  Company.create({
+        name: company_name
+      })
+      company.save
+    else
+      Job.where(:title => job[:title]).all.destroy
+    end
+
+    job_instance = Job.create(job.except('company'))
+    job_instance.startup_type = k
+    job_instance.company = company if company.present?
+    job_instance.save
+  end
+
+end

@@ -13,6 +13,7 @@
         - hacker = @hackers[i]
         - hustler = @hustlers[i]
         - designer = @designers[i]
+        
         %tr
           %td
             = link_to "#{ hacker.company_name } - #{ hacker.title } (#{ hacker.city }, #{ hacker.state })", hacker.apply_link if hacker.present?
