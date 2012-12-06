@@ -1,3 +1,7 @@
+body {
+  background-color: #4E70AD;
+  color: rgb(240,240,240); 
+}
 #newsletter {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
   text-align: center;
@@ -6,6 +10,7 @@
     font-size: 16px;
     font-weight: 300;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   #title {
@@ -28,6 +33,15 @@
 
     td, th {
       text-align: center;
+    }
+
+    a {
+      color: #FFC964;
+    }
+
+    td {
+      font-family: Tahoma;
+
     }
   }
 }
