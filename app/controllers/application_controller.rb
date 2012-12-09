@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
   end
 
   def newsletter
-    @hackers = Job.where(:startup_type => 'Hacker').all.to_a
-    @hustlers = Job.where(:startup_type => 'Hustler').all.to_a
-    @designers = Job.where(:startup_type => 'Designer').all.to_a
+    @hackers = Job.where(:startup_type => 'Hacker').all.to_a.shuffle!
+    @hustlers = Job.where(:startup_type => 'Hustler').all.to_a.shuffle!
+    @designers = Job.where(:startup_type => 'Designer').all.to_a.shuffle!
 
     @row_count = [@hackers.count, @hustlers.count, @designers.count].max
 

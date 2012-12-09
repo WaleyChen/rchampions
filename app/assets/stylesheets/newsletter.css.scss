@@ -1,14 +1,14 @@
 body {
-  background-color: #4E70AD;
-  color: rgb(240,240,240); 
+  -webkit-font-smoothing: antialiased;
 }
+
 #newsletter {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
   text-align: center;
 
   #heading {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 100;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -23,20 +23,14 @@ body {
 
   table {
 
-    font-family: Cambria, Georgia, serif;
-
     th {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 100;
       width: 25%;
     }
 
     td, th {
       text-align: center;
-    }
-
-    a {
-      color: #FFC964;
     }
 
     td {

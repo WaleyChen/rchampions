@@ -9,15 +9,30 @@
         %th#hustler Hustler
         %th#designer Designer
     %tbody
-      - (0..@row_count - 1).each do |i|
+      - # code smell, move logic to controller
+      - (0..4).each do |i|
         - hacker = @hackers[i]
         - hustler = @hustlers[i]
+
+        - hacker = @hackers[i]
+        - if hacker.present?
+          - hacker_title = "#{ hacker.title } (#{ hacker.city }, #{ hacker.state })"
+          - hacker_title.prepend "#{ hacker.company_name } - " if hacker && hacker.company_name.present?
+
+        - hustler = @hustlers[i]
+          - if hustler.present?
+          - hustler_title = "#{ hustler.title } (#{ hustler.city }, #{ hustler.state })"
+          - hustler_title.prepend "#{ hustler.company_name } - " if hustler && hustler.company_name.present?
+
         - designer = @designers[i]
+        - if designer.present?
+          - designer_title = "#{ designer.title } (#{ designer.city }, #{ designer.state })"
+          - designer_title.prepend "#{ designer.company_name } - " if designer && designer.company_name.present?
         
         %tr
           %td
-            = link_to "#{ hacker.company_name } - #{ hacker.title } (#{ hacker.city }, #{ hacker.state })", hacker.apply_link if hacker.present?
+            = link_to hacker_title, hacker.apply_link if hacker.present?
           %td
-            = link_to "#{ hustler.company_name } - #{ hustler.title } (#{ hustler.city }, #{ hustler.state })", hustler.apply_link if hustler.present?
+            = link_to hustler_title, hustler.apply_link if hustler.present?
           %td
-            = link_to "#{ designer.company_name } - #{ designer.title } (#{ designer.city }, #{ designer.state })", designer.apply_link if designer.present?
+            = link_to designer_title, designer.apply_link if designer.present?

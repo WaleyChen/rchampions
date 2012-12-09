@@ -32,6 +32,12 @@
 # job.company = company
 # job.save
 
+Company.where(:job_count => 0).all.destroy
+Job.where(:startup_type => 'Hacker').all.destroy
+Job.where(:startup_type => 'Hustler').all.destroy
+Job.where(:startup_type => 'Designer').all.destroy
+
+
 FiveHundredPixels.seed
 Facebook.seed
 MediaCompany.seed
@@ -50,11 +56,9 @@ jobs.each do |k, v|
 
   v.each do |job|
     company_name = job[:company]
+    company = Company.where(:name => company_name).first
 
-    if company_name.present?
-      Company.where(:name => company_name).all.destroy
-      Job.where(:company_name => company_name).all.destroy
-
+    if !company.present? && company_name.present?
       company =  Company.create({
         name: company_name
       })
