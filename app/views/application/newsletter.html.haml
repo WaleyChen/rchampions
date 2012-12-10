@@ -1,6 +1,6 @@
 #newsletter
   #title= 'AceInterns'
-  #heading= 'Get a Biweekly Newsletter of Awesome Internships'
+  #heading= 'Get a Biweekly Newsletter of Awesome Internships From The Best Companies'
 
   %table.table.table-hover
     %thead
@@ -10,7 +10,7 @@
         %th#designer Designer
     %tbody
       - # code smell, move logic to controller
-      - (0..4).each do |i|
+      - (0..12).each do |i|
         - hacker = @hackers[i]
         - hustler = @hustlers[i]
 
@@ -36,3 +36,17 @@
             = link_to hustler_title, hustler.apply_link if hustler.present?
           %td
             = link_to designer_title, designer.apply_link if designer.present?
+
+  = form_for @newsletter_subscriber do |form|
+    .jobs_category
+      .row
+        = form.label 'Hacker'
+        = form.radio_button :jobs_interested_in, 'hacker'
+      .row
+        = form.label 'Hustler'
+        = form.radio_button :jobs_interested_in, 'hustler'
+      .row
+        = form.label 'Designer'
+        = form.radio_button :jobs_interested_in, 'designer'
+    .row= form.email_field :email, :placeholder => 'Email'
+    .row= form.submit 'Subscribe'

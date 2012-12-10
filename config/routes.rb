@@ -58,4 +58,5 @@ AceInterns::Application.routes.draw do
   root :to => 'application#aceinterns'
   get 'newsletter' => 'application#newsletter'
   resources :jobs
+  resources :newsletter_subscribers
 end
