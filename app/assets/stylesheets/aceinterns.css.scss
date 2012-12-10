@@ -1,3 +1,8 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; 
+  -webkit-font-smoothing: antialiased;
+}
+
 #right-panel {
 
   position: fixed;
@@ -124,5 +129,14 @@
         }
       }
     }
+  }
+}
+
+.nav {
+  li {
+    border-color: #08C;
+    border-right-style: solid !important;
+    border-right-width: 1px !important;
+    font-weight: 101;
   }
 }
