@@ -1,6 +1,6 @@
 #newsletter
   #title= 'AceInterns'
-  #heading= 'Get a Biweekly Newsletter of Awesome Internships From The Best Companies'
+  #heading= 'Get a Biweekly Newsletter of Awesome Internships'
 
   %table.table.table-hover
     %thead
@@ -38,15 +38,94 @@
             = link_to designer_title, designer.apply_link if designer.present?
 
   = form_for @newsletter_subscriber do |form|
-    .jobs_category
-      .row
-        = form.label 'Hacker'
-        = form.radio_button :jobs_interested_in, 'hacker'
-      .row
-        = form.label 'Hustler'
-        = form.radio_button :jobs_interested_in, 'hustler'
-      .row
-        = form.label 'Designer'
-        = form.radio_button :jobs_interested_in, 'designer'
+    %table.table#level_wrapper
+      %thead
+        %tr
+          %th#hacker 
+            %h2= 'Level'
+      %tbody
+        %tr
+          %td
+            = form.label "Junior        "
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Intermediate'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Senior'
+            = form.check_box :jobs_interested_in
+
+    %table.table#category_wrapper
+      %thead
+        %tr
+          %th#hustler 
+            %h2= 'Category'
+      %tbody
+        %tr
+          %td
+            = form.label 'Hacker'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Hustler'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Designer'
+            = form.check_box :jobs_interested_in
+
+    %table.table#location_wrapper
+      %thead
+        %tr
+          %th#hacker 
+            %h2= 'Location'
+      %tbody
+        %tr
+          %td
+            = form.label "Canada"
+            = form.check_box :jobs_interested_in
+          %td
+            = form.label :jobs_interested_in, "USA"
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Toronto'
+            = form.check_box :jobs_interested_in
+          %td
+            = form.label 'California'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label :jobs_interested_in, 'Kitchener/Cambridge/Waterloo'
+            = form.check_box :jobs_interested_in
+          %td
+            = form.label :jobs_interested_in, 'New York'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Vancouver'
+            = form.check_box :jobs_interested_in
+          %td
+            = form.label 'Florida'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label 'Ottawa'
+            = form.check_box :jobs_interested_in
+          %td
+            = form.label 'Washington'
+            = form.check_box :jobs_interested_in
+        %tr
+          %td
+            = form.label :jobs_interested_in, 'Montreal'
+            = form.check_box :jobs_interested_in
+          %td
+            = form.label 'Boston'
+            = form.check_box :jobs_interested_in
+
+    .location
+    %br
     .row= form.email_field :email, :placeholder => 'Email'
     .row= form.submit 'Subscribe'

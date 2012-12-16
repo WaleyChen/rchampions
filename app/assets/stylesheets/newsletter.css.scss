@@ -23,6 +23,25 @@
   }
 
   form {
+    #category_wrapper,
+    #level_wrapper,
+    #location_wrapper {
+      display: inline;
+      // margin-left: auto; 
+      // margin-right: auto;
+      height: 100%;
+      width: 33%;
+    }
+
+    .job_levels {
+      margin-right: 40px;
+    }
+
+    .job_categories,
+    .job_levels {
+      display: inline-block;
+    }
+
     label {
       display: inline;
     }
