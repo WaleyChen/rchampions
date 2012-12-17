@@ -37,95 +37,70 @@
           %td
             = link_to designer_title, designer.apply_link if designer.present?
 
-  = form_for @newsletter_subscriber do |form|
-    %table.table#level_wrapper
-      %thead
-        %tr
-          %th#hacker 
-            %h2= 'Level'
-      %tbody
-        %tr
-          %td
-            = form.label "Junior        "
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Intermediate'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Senior'
-            = form.check_box :jobs_interested_in
+  #heading= "Any preferences?"
+  %br
+  #form-wrapper
+    = form_for @newsletter_subscriber do |form|
 
-    %table.table#category_wrapper
-      %thead
-        %tr
-          %th#hustler 
-            %h2= 'Category'
-      %tbody
-        %tr
-          %td
-            = form.label 'Hacker'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Hustler'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Designer'
-            = form.check_box :jobs_interested_in
+      #level-wrapper
+        .row
+          = form.label "Junior        "
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Intermediate'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Senior'
+          = form.check_box :jobs_interested_in
 
-    %table.table#location_wrapper
-      %thead
-        %tr
-          %th#hacker 
-            %h2= 'Location'
-      %tbody
-        %tr
-          %td
-            = form.label "Canada"
-            = form.check_box :jobs_interested_in
-          %td
-            = form.label :jobs_interested_in, "USA"
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Toronto'
-            = form.check_box :jobs_interested_in
-          %td
-            = form.label 'California'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label :jobs_interested_in, 'Kitchener/Cambridge/Waterloo'
-            = form.check_box :jobs_interested_in
-          %td
-            = form.label :jobs_interested_in, 'New York'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Vancouver'
-            = form.check_box :jobs_interested_in
-          %td
-            = form.label 'Florida'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label 'Ottawa'
-            = form.check_box :jobs_interested_in
-          %td
-            = form.label 'Washington'
-            = form.check_box :jobs_interested_in
-        %tr
-          %td
-            = form.label :jobs_interested_in, 'Montreal'
-            = form.check_box :jobs_interested_in
-          %td
-            = form.label 'Boston'
-            = form.check_box :jobs_interested_in
+      #canada
+        .row
+          = form.label 'Canada'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Toronto'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label :jobs_interested_in, 'Waterloo'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Vancouver'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Ottawa'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label :jobs_interested_in, 'Montreal'
+          = form.check_box :jobs_interested_in
 
-    .location
-    %br
-    .row= form.email_field :email, :placeholder => 'Email'
-    .row= form.submit 'Subscribe'
+      #usa
+        .row
+          = form.label :jobs_interested_in, 'USA'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'California'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label :jobs_interested_in, 'New York'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Washington'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Boston'
+          = form.check_box :jobs_interested_in
+
+      #category-wrapper
+        .row
+          = form.label 'Hacker'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Hustler'
+          = form.check_box :jobs_interested_in
+        .row
+          = form.label 'Designer'
+          = form.check_box :jobs_interested_in
+
+      #subscribe-area
+        .row= form.email_field :email, :placeholder => 'Email'
+        .row#subscribe-btn= form.submit 'Subscribe!'
