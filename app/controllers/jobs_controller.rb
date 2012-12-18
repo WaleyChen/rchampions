@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(params[:job])
     @job.save
-    redirect_to :controller => 'application', :action => 'aceinterns'
+    redirect_to :controller => 'application', :action => 'rchampions'
   end
 
   def index
