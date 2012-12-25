@@ -1,3 +1,6 @@
+http://docs.mongodb.org/manual/reference/mongoexport/
+mongoexport is a utility that produces a JSON or CSV export of data stored in a MongoDB instance
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
