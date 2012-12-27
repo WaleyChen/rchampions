@@ -3,7 +3,28 @@ class FlippedData
 
   field :data
   field :hashed_data
+  field :fhashed_data
   field :similar_champions
+
+  def filter_hashed_data
+    fhashed_data = {}
+
+    self.hashed_data.keys.each do |champ|
+      champ_stats = {}
+
+      hashed_data[champ].each do |k, v|
+        puts k
+        champ_stats[k] = v if v > 0.55
+      end
+
+      fhashed_data[champ] = champ_stats
+    end
+    
+    new_fp = FlippedData.new
+    new_fp.data = 'FP2'
+    new_fp.fhashed_data = fhashed_data
+    new_fp.save
+  end
 
   def sort
     self.data.keys.each do |k|
@@ -40,6 +61,22 @@ class FlippedData
     end
     
     self.similar_champions
+    self.save
+  end
+
+  def calc_similar_champions_2
+    self.similar_champions = {}
+    self.fhashed_data.each do |k_1, v_1|
+
+      sim_champs = {}
+      self.fhashed_data.each do |k_2, v_2|
+        next if k_1 == k_2
+        sim_champs[k_2] = Scrape.sim_champion(v_1, v_2)
+      end
+      self.similar_champions[k_1] = sim_champs
+
+    end
+
     self.save
   end
 
