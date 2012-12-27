@@ -114,3 +114,6 @@ Vayne: 0.32326427328799623
 Elise: 0.3177570093457944
 Alistar: 0.3173211781206171
 Syndra: 0.275
+
+Per each champion, the % of players who have a win rate > 70%.
+Players consist of the top 5% of LoL in ranked 5x5 solo games from Season 2.

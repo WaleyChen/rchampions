@@ -14,16 +14,14 @@ class FlippedData
 
       hashed_data[champ].each do |k, v|
         puts k
-        champ_stats[k] = v if v > 0.55
+        champ_stats[k] = v if v > 0.70
       end
 
       fhashed_data[champ] = champ_stats
     end
     
-    new_fp = FlippedData.new
-    new_fp.data = 'FP2'
-    new_fp.fhashed_data = fhashed_data
-    new_fp.save
+    self.fhashed_data = fhashed_data
+    self.save
   end
 
   def sort
