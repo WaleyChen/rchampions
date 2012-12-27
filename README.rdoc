@@ -5,3 +5,112 @@ Per each champion, the number of players who have a win rate > 55%.
 Players consist of the top 5% of LoL in ranked 5x5 solo games from Season 2.
 
 [["Soraka", 4331], ["Taric", 3947], ["Ezreal", 3736], ["Graves", 3664], ["Janna", 3111], ["Sona", 2996], ["Ashe", 2862], ["Ahri", 2597], ["Lee Sin", 2412], ["Morgana", 2385], ["Kennen", 2223], ["Amumu", 2186], ["Caitlyn", 2166], ["Vayne", 2044], ["Sivir", 2039], ["Riven", 1983], ["Nunu", 1911], ["Blitzcrank", 1898], ["Gangplank", 1861], ["Irelia", 1851], ["Warwick", 1814], ["Alistar", 1810], ["Corki", 1787], ["Jax", 1779], ["Vladimir", 1779], ["Malphite", 1726], ["Skarner", 1577], ["Tristana", 1576], ["Ryze", 1539], ["Nocturne", 1521], ["Twisted Fate", 1507], ["Miss Fortune", 1430], ["Cho'Gath", 1407], ["Annie", 1389], ["Cassiopeia", 1373], ["Udyr", 1348], ["Singed", 1347], ["Shyvana", 1335], ["Brand", 1321], ["Katarina", 1315], ["Kog'Maw", 1311], ["Kassadin", 1301], ["Karthus", 1268], ["Darius", 1211], ["Olaf", 1184], ["Rumble", 1151], ["Mordekaiser", 1146], ["Akali", 1142], ["Nidalee", 1131], ["Wukong", 1114], ["Sion", 1099], ["Shen", 1093], ["Jayce", 1086], ["Shaco", 1079], ["Teemo", 1029], ["Yorick", 1029], ["Leona", 1019], ["Jarvan IV", 1015], ["Tryndamere", 1002], ["Maokai", 958], ["Lux", 955], ["Swain", 933], ["Talon", 922], ["Orianna", 921], ["Zyra", 893], ["Xin Zhao", 891], ["Renekton", 860], ["Garen", 847], ["Anivia", 822], ["Fiddlesticks", 810], ["Rammus", 809], ["Diana", 787], ["Pantheon", 760], ["Gragas", 718], ["Nautilus", 717], ["Nasus", 715], ["Kayle", 691], ["Malzahar", 680], ["LeBlanc", 678], ["Fizz", 657], ["Evelynn", 627], ["Galio", 600], ["Rengar", 581], ["Varus", 552], ["Veigar", 525], ["Draven", 508], ["Lulu", 506], ["Xerath", 436], ["Zilean", 379], ["Ziggs", 370], ["Hecarim", 354], ["Urgot", 322], ["Fiora", 298], ["Master Yi", 292], ["Volibear", 281], ["Trundle", 270], ["Twitch", 268], ["Poppy", 262], ["Viktor", 223], ["Kha'Zix", 154], ["Sejuani", 117], ["Karma", 95], ["Heimerdinger", 95], ["Syndra", 44], ["Elise", 34]]
+
+Per each champion, the % of players who have a win rate > 55%.
+Players consist of the top 5% of LoL in ranked 5x5 solo games from Season 2.
+
+ Zyra: 0.6780561883067577
+Rumble: 0.6672463768115942
+Shaco: 0.6179839633447881
+Singed: 0.6048495734171532
+Evelynn: 0.5943127962085308
+Sion: 0.5921336206896551
+Wukong: 0.5835515976951283
+Urgot: 0.575
+Mordekaiser: 0.5735735735735735
+Fiddlesticks: 0.5720338983050848
+Rengar: 0.5690499510284035
+Twisted Fate: 0.5629435935748973
+Rammus: 0.5618055555555556
+Miss Fortune: 0.5581576893052302
+Karthus: 0.5566286215978928
+Twitch: 0.5560165975103735
+Kayle: 0.5519169329073482
+Amumu: 0.5513240857503152
+Sivir: 0.548708288482239
+Draven: 0.5468245425188375
+Teemo: 0.5455991516436903
+Diana: 0.5450138504155124
+Katarina: 0.5398193760262726
+Ezreal: 0.5362422850581312
+Malphite: 0.5338694710794928
+Hecarim: 0.5315315315315315
+Tryndamere: 0.5310015898251192
+Talon: 0.5298850574712644
+Ahri: 0.5276310442909387
+Zilean: 0.5156462585034014
+Kog'Maw: 0.5119094103865678
+Yorick: 0.5104166666666666
+Shen: 0.5090824406148113
+Darius: 0.5069066555043952
+Skarner: 0.5056107726835524
+Warwick: 0.5048705816866128
+Garen: 0.5047675804529201
+Xin Zhao: 0.5042444821731749
+Poppy: 0.5028790786948176
+Janna: 0.5027472527472527
+Soraka: 0.5020285151269271
+Jayce: 0.5009225092250923
+Taric: 0.4992410827219833
+Kennen: 0.49831876260928043
+Galio: 0.4922067268252666
+Nasus: 0.49107142857142855
+Varus: 0.4880636604774536
+Sona: 0.4854180168502916
+Renekton: 0.485053581500282
+Ashe: 0.4848382178553278
+Swain: 0.4826694257630626
+Jarvan IV: 0.48264384213029005
+Annie: 0.48078920041536866
+Graves: 0.48033560566334554
+Kassadin: 0.4776064610866373
+Brand: 0.4774123599566317
+Akali: 0.47702589807852963
+Nunu: 0.4765586034912718
+Morgana: 0.47368421052631576
+Jax: 0.4711334745762712
+Blitzcrank: 0.4710846363862001
+Nidalee: 0.4706616729088639
+Riven: 0.46462043111527646
+Heimerdinger: 0.4634146341463415
+Cho'Gath: 0.46282894736842106
+Cassiopeia: 0.4540343915343915
+Maokai: 0.4523135033050047
+Pantheon: 0.45211183819155265
+Malzahar: 0.45152722443559096
+Volibear: 0.44603174603174606
+Shyvana: 0.4451483827942648
+Gangplank: 0.44193778199952505
+Nautilus: 0.43880048959608325
+Ziggs: 0.43580683156654887
+Viktor: 0.4330097087378641
+Irelia: 0.430765650453805
+Sejuani: 0.42857142857142855
+Vladimir: 0.42795285061342314
+Anivia: 0.41896024464831805
+Kha'Zix: 0.4117647058823529
+Fizz: 0.4093457943925234
+Lux: 0.4075970977379428
+Olaf: 0.40701271914747333
+Caitlyn: 0.4007400555041628
+Nocturne: 0.3997371879106439
+Veigar: 0.39893617021276595
+Corki: 0.3921439543559359
+Xerath: 0.39103139013452914
+Lee Sin: 0.39016499514720154
+Orianna: 0.3894291754756871
+Master Yi: 0.38675496688741723
+Fiora: 0.3855109961190168
+Ryze: 0.38379052369077304
+LeBlanc: 0.37562326869806095
+Gragas: 0.3706763035622096
+Trundle: 0.36635006784260515
+Lulu: 0.36117059243397576
+Udyr: 0.35140771637122004
+Tristana: 0.34782608695652173
+Leona: 0.3409166945466711
+Karma: 0.3310104529616725
+Vayne: 0.32326427328799623
+Elise: 0.3177570093457944
+Alistar: 0.3173211781206171
+Syndra: 0.275
